@@ -17,10 +17,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const tweetsContainer = document.querySelector("#tweets-container");
         const tweetsHtml = tweets.map(
-            ({ message }) => `
+            (tweet) => `
       <div class="card">
+        <div class="card-header">
+            ${tweet.user.username}
+        </div>
         <div class="card-body">
-          <p class="card-text">${message}</p>
+          <p class="card-text">${tweet.message}</p>
         </div>
       </div>
     `
